@@ -38,6 +38,7 @@ class Album extends React.Component {
       return <Loading />;
     }
     const { collectionName, artistName, artworkUrl100 } = albums[0];
+    console.log(musics);
     return (
       <>
         <Header />
@@ -48,8 +49,11 @@ class Album extends React.Component {
           {musics.map((music, index) => (
             <MusicCard
               key={ index }
+              musics={ musics }
               trackName={ music.trackName }
               previewUrl={ music.previewUrl }
+              trackId={ music.trackId }
+
             />
           ))}
         </div>
