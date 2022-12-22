@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../styles/Login.css';
+import logo from '../images/logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -40,14 +42,17 @@ class Login extends React.Component {
       return <Loading />;
     }
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="login-white-box">
         <form action="">
+          <img src={ logo } alt="TrybeTunes logo" width="150px" className="login-logo" />
           <label htmlFor="inputName">
             <input
               type="text"
               data-testid="login-name-input"
               name="username"
               onChange={ this.handleChange }
+              placeholder="Usuário"
+              className="login-username"
             />
           </label>
           <button
@@ -55,6 +60,7 @@ class Login extends React.Component {
             data-testid="login-submit-button"
             disabled={ username.length < disableLimit }
             onClick={ this.handleClick }
+            className="login-button"
           >
             Entrar
 
