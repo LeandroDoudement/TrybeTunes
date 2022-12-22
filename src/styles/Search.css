@@ -1,0 +1,67 @@
+.search-page {
+  display: flex;
+}
+
+.second-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-artist-box {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-name-input {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 23px;
+  width: 400px;
+  height: 40px;
+}
+
+.artist-name-input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+.search-button {
+  width: 114px;
+  height: 40px;
+  background: #00d5e2;
+  border-radius: 23px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.result-artists-box {
+  width: 100%;
+  height: 100%;
+  background: #eff3f9;
+}
+
+.result-artist-name {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #003be5;
+}
+
+.no-album-search {
+  text-align: center;
+}

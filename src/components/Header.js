@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
+import '../styles/Header.css';
+import logo from '../images/logo.png';
 
 class Header extends React.Component {
   constructor() {
@@ -34,10 +36,13 @@ class Header extends React.Component {
     }
     return (
       <header data-testid="header-component">
-        <h1 data-testid="header-user-name">{username}</h1>
-        <Link to="/search" data-testid="link-to-search">Pesquisa</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Músicas favoritas</Link>
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <img src={ logo } alt="TrybeTunes logo" width="100px" />
+        <div className="header-links">
+          <Link to="/search" data-testid="link-to-search">Pesquisa</Link>
+          <Link to="/favorites" data-testid="link-to-favorites">Músicas favoritas</Link>
+          <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        </div>
+        <span data-testid="header-user-name">{username}</span>
       </header>
     );
   }

@@ -2,7 +2,6 @@ body {
   background-color: #1ac5e6;
   font-family: Epilogue;
   font-style: normal;
-  margin: 5%;
 }
 
 .login-white-box {
@@ -10,7 +9,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 26px rgba(68, 73, 85, 0.2);
   height: 350px;
-  margin: auto;
+  margin: 5% auto;
   text-align: center;
   width: 500px;
 }

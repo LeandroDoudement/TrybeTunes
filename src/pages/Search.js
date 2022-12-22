@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
+import '../styles/Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -49,32 +52,48 @@ class Search extends React.Component {
       return <Loading />;
     }
     return (
-      <>
+      <div data-testid="page-search" className="search-page">
         <Header />
-        <div data-testid="page-search">
-          <form action="">
-            <label htmlFor="bandName">
-              <input
-                type="text"
-                data-testid="search-artist-input"
-                name="bandName"
-                onChange={ this.handleChange }
-                value={ bandName }
-              />
-            </label>
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              disabled={ bandName.length < buttonLimit }
-              onClick={ this.fetchArtists }
-            >
-              Pesquisar
+        <div className="second-box">
+          <div className="search-artist-box">
+            <form action="">
+              <label htmlFor="bandName">
+                <input
+                  type="text"
+                  data-testid="search-artist-input"
+                  name="bandName"
+                  onChange={ this.handleChange }
+                  value={ bandName }
+                  className="artist-name-input"
+                  placeholder="Digite o nome do artista"
+                />
+              </label>
+              <button
+                type="button"
+                data-testid="search-artist-button"
+                disabled={ bandName.length < buttonLimit }
+                onClick={ this.fetchArtists }
+                className="search-button"
+              >
+                Pesquisar
 
-            </button>
-            <h2>{`Resultado de álbuns de: ${searchTerm}`}</h2>
-            {albums.length === 0 ? <p>Nenhum álbum foi encontrado</p>
+              </button>
+            </form>
+          </div>
+          <div className="result-artists-box">
+            <h2
+              className="result-artist-name"
+            >
+              {`Resultado de álbuns de: ${searchTerm}`}
+
+            </h2>
+            {albums.length === 0
+              ? <p className="no-album-search">
+                Nenhum álbum foi pesquisado
+
+              </p>
               : albums.map((album, index) => (
-                <div key={ index }>
+                <div key={ index } className="album">
                   <img src={ album.artworkUrl100 } alt={ album.collectionName } />
                   <p>{album.collectionName}</p>
                   <p>{album.artistName}</p>
@@ -88,9 +107,10 @@ class Search extends React.Component {
                 </div>
 
               ))}
-          </form>
+          </div>
         </div>
-      </>
+      </div>
+
     );
   }
 }
