@@ -5,63 +5,84 @@
 .second-box {
   display: flex;
   flex-direction: column;
+  margin-left: 200px;
   width: 100%;
 }
 
 .search-artist-box {
-  height: 20%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  height: 25vh;
+  justify-content: center;
+  width: 100%;
 }
 
 .artist-name-input {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 23px;
-  width: 400px;
   height: 40px;
+  width: 400px;
 }
 
 .artist-name-input::placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: white;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 14px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .search-button {
-  width: 114px;
-  height: 40px;
   background: #00d5e2;
   border-radius: 23px;
+  color: white;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 14px;
+  height: 40px;
   letter-spacing: 0.03em;
+  line-height: 14px;
   text-transform: uppercase;
-  color: white;
+  width: 114px;
 }
 
 .result-artists-box {
-  width: 100%;
-  height: 100%;
   background: #eff3f9;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  min-height: calc(100vh - 25vh);
+  width: 100%;
 }
 
 .result-artist-name {
-  font-weight: 300;
+  color: #003be5;
   font-size: 20px;
+  font-weight: 300;
   line-height: 20px;
   text-align: center;
+}
 
-  color: #003be5;
+.album {
+  padding: 10px;
+  width: 100px;
+}
+
+.album > img {
+  border-radius: 10px;
+}
+
+.album-collection-name {
+  color: #3d495c;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 150%;
 }
 
 .no-album-search {
+  margin: 0 auto;
   text-align: center;
 }
