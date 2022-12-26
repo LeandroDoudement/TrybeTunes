@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
+import '../styles/MusicCard.css';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -65,30 +66,33 @@ class MusicCard extends React.Component {
       return <Loading />;
     }
     return (
-      <div>
-        <h4>{trackName}</h4>
-        <audio
-          data-testid="audio-component"
-          src={ previewUrl }
-          controls
-        >
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          {' '}
-          <code>audio</code>
-        </audio>
-        <label htmlFor="favoriteSong">
-          Favorita
-          <input
-            type="checkbox"
-            name="favoriteSong"
-            onChange={ this.changeFavorite }
-            checked={ saved }
-            data-testid={ `checkbox-music-${trackId}` }
-          />
-        </label>
-      </div>
+      <>
+        <div className="song-box">
+          <span className="song-name">{trackName}</span>
+          <audio
+            data-testid="audio-component"
+            src={ previewUrl }
+            controls
+          >
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            {' '}
+            <code>audio</code>
+          </audio>
+          <label htmlFor="favoriteSong">
+            Favoritar
+            <input
+              type="checkbox"
+              name="favoriteSong"
+              onChange={ this.changeFavorite }
+              checked={ saved }
+              data-testid={ `checkbox-music-${trackId}` }
+            />
+          </label>
+        </div>
+        <hr />
+      </>
     );
   }
 }

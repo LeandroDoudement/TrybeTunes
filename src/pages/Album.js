@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
+import '../styles/Album.css';
 
 class Album extends React.Component {
   constructor() {
@@ -40,24 +41,30 @@ class Album extends React.Component {
     const { collectionName, artistName, artworkUrl100 } = albums[0];
     console.log(musics);
     return (
-      <>
+      <div className="album-page">
         <Header />
-        <div data-testid="page-album">
-          <h2 data-testid="artist-name">{artistName}</h2>
-          <h3 data-testid="album-name">{`${collectionName} - ${artistName}`}</h3>
-          <img src={ artworkUrl100 } alt={ collectionName } />
-          {musics.map((music, index) => (
-            <MusicCard
-              key={ index }
-              musics={ musics }
-              trackName={ music.trackName }
-              previewUrl={ music.previewUrl }
-              trackId={ music.trackId }
+        <div data-testid="page-album" className="second-box">
+          <div className="album-informations">
+            <img src={ artworkUrl100 } alt={ collectionName } className="album-img" />
+            <div className="album-artist-box">
+              <span className="album-name">{collectionName}</span>
+              <span data-testid="album-name" className="artist-name">{artistName}</span>
+            </div>
+          </div>
+          <div className="album-songs">
+            {musics.map((music, index) => (
+              <MusicCard
+                key={ index }
+                musics={ musics }
+                trackName={ music.trackName }
+                previewUrl={ music.previewUrl }
+                trackId={ music.trackId }
 
-            />
-          ))}
+              />
+            ))}
+          </div>
         </div>
-      </>
+      </div>
     );
   }
 }

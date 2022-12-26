@@ -1,0 +1,22 @@
+.song-box {
+  align-items: center;
+  display: flex;
+}
+
+.song-name {
+  color: #001813;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+audio {
+  background-color: white;
+  border-radius: 40px;
+}
+
+hr {
+  border: 0.847727px solid #ccd4e1;
+  height: 0;
+  width: 591px;
+}
