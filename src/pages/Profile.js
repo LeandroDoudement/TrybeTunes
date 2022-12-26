@@ -47,7 +47,7 @@ class Profile extends React.Component {
           </div>
           <div className="profile-informations">
             <div className="information">
-              <span className="information-title">Nome:</span>
+              <span className="information-title">Username:</span>
               <span>
                 {user.name ? user.name : 'Sem usuário registrado'}
               </span>
