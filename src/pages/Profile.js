@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -46,25 +47,33 @@ class Profile extends React.Component {
             />
           </div>
           <div className="profile-informations">
-            <div className="information">
-              <span className="information-title">Username:</span>
-              <span>
-                {user.name ? user.name : 'Sem usuário registrado'}
-              </span>
+            <div className="informations">
+              <div className="information">
+                <span className="information-title">Username:</span>
+                <span>
+                  {user.name ? user.name : 'Sem usuário registrado'}
+                </span>
+              </div>
+              <div className="information">
+                <span className="information-title">Email:</span>
+                <span>
+                  {user.email ? user.email : 'Sem email registrado'}
+                </span>
+              </div>
+              <div className="information">
+                <span className="information-title">Descrição:</span>
+                <span>
+                  {user.description ? user.description : 'Sem descrição registrada'}
+                </span>
+              </div>
+              <Link
+                to="/profile/edit"
+                className="edit-profile-button"
+              >
+                Editar perfil
+
+              </Link>
             </div>
-            <div className="information">
-              <span className="information-title">Email:</span>
-              <span>
-                {user.email ? user.email : 'Sem email registrado'}
-              </span>
-            </div>
-            <div className="information">
-              <span className="information-title">Descrição:</span>
-              <span>
-                {user.description ? user.description : 'Sem descrição registrada'}
-              </span>
-            </div>
-            <Link to="/profile/edit" className="edit-profile-button">Editar perfil</Link>
           </div>
         </div>
       </div>

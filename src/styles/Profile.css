@@ -22,7 +22,6 @@
 }
 
 .profile-informations {
-  align-items: center;
   background: #eff3f9;
   display: flex;
   flex-direction: column;
@@ -31,14 +30,18 @@
   width: 100%;
 }
 
+.informations {
+  margin: 0 auto;
+}
+
 .information {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .information-title {
-  align-self: center;
   color: #3d495c;
   font-size: 16px;
   font-weight: 700;
