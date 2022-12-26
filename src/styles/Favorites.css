@@ -1,0 +1,46 @@
+.favorites-page {
+  display: flex;
+}
+
+header {
+  align-items: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  height: 100vh;
+  position: fixed;
+  width: 200px;
+}
+
+.second-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  width: 100%;
+}
+
+.page-title-box {
+  padding: 25px;
+}
+
+.page-title {
+  color: white;
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 20px;
+}
+
+.favorite-songs-box {
+  align-items: center;
+  background: #eff3f9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  min-height: calc(100vh - 25vh);
+  padding-top: 2%;
+  width: 100%;
+}

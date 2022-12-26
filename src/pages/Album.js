@@ -39,7 +39,6 @@ class Album extends React.Component {
       return <Loading />;
     }
     const { collectionName, artistName, artworkUrl100 } = albums[0];
-    console.log(musics);
     return (
       <div className="album-page">
         <Header />
